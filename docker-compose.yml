@@ -1,0 +1,45 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./app.db
+      - ADMIN_KEY=carecaBrilhosa
+      - ADMIN_EMAIL=admin@financas.local
+      - ADMIN_PASSWORD=admin123
+      - AUTH_SALT=salt_seguro_para_hash
+    volumes:
+      - backend_db:/app
+      - backend_data:/app/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: "http://localhost:8000"
+        NEXT_PUBLIC_ADMIN_KEY: "carecaBrilhosa"
+        NEXT_PUBLIC_ADMIN_EMAIL: "admin@financas.local"
+        NEXT_PUBLIC_ADMIN_PASSWORD: "admin123"
+    ports:
+      - "8001:8001"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      backend:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  backend_db:
+  backend_data:

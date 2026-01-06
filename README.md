@@ -16,7 +16,7 @@ Sistema de gestão de investimentos em renda fixa para a Anova Investimentos. Pe
 
 ## ⚡ Início Rápido
 
-### Com Docker Compose (Recomendado)
+### Com Docker Compose
 
 ```bash
 # Clone o repositório

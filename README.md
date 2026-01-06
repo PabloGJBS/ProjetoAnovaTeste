@@ -24,7 +24,7 @@ git clone https://github.com/seu-usuario/projeto-financas.git
 cd projeto-financas
 
 # Suba os containers
-docker-compose up --build
+docker compose up --build
 
 # Acesse:
 # - Frontend: http://localhost:8001

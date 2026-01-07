@@ -20,7 +20,7 @@ Sistema de gestão de investimentos em renda fixa para a Anova Investimentos. Pe
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/projeto-financas.git
+git clone https://github.com/PabloGJBS/ProjetoAnovaTeste.git
 cd projeto-financas
 
 # Suba os containers

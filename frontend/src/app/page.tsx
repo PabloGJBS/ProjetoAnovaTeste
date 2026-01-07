@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
@@ -36,10 +37,17 @@ export default function Home() {
       {/* Header */}
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-sm font-bold text-black">
-            PF
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white p-1">
+            <Image
+              src="https://anovainvestimentos.com.br/wp-content/uploads/2025/09/Logo.png"
+              alt="Anova Investimentos"
+              width={40}
+              height={40}
+              className="object-contain"
+              unoptimized
+            />
           </div>
-          <div className="text-xs uppercase tracking-[0.35em] text-white/70">Projeto Finanças</div>
+          <div className="text-xs uppercase tracking-[0.35em] text-white/70">Anova Investimentos</div>
         </div>
         <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.35em] text-white/50 md:flex">
           <span className="cursor-pointer transition-colors hover:text-white">Início</span>
@@ -140,7 +148,7 @@ export default function Home() {
       <section className="mx-auto w-full max-w-6xl px-6 py-20">
         <div className="text-center">
           <h2 className="font-display text-3xl text-white md:text-4xl">
-            Como o <span className="text-gradient">Projeto Finanças</span> funciona
+            Como a <span className="text-gradient">Anova Investimentos</span> funciona
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
             Fluxo simples e orientado a dados para gestão de clientes e carteiras de investimento.
@@ -187,7 +195,7 @@ export default function Home() {
       <footer className="border-t border-white/5">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
           <div className="text-xs text-white/40">
-            © 2026 Projeto Finanças. Todos os direitos reservados.
+            © 2026 Anova Investimentos. Todos os direitos reservados.
           </div>
           <div className="flex gap-6 text-xs text-white/40">
             <span className="cursor-pointer transition-colors hover:text-white">Termos</span>

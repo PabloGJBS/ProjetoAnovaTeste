@@ -44,6 +44,7 @@ export default function Dashboard() {
   const [portfolio, setPortfolio] = useState<Portfolio | null>(null);
   const [recent, setRecent] = useState<RecentAllocation[]>([]);
   const [error, setError] = useState("");
+  const [showTitles, setShowTitles] = useState(false);
 
   useEffect(() => {
     const state = getAuth();
@@ -183,7 +184,6 @@ export default function Dashboard() {
   }
 
   // Client view
-  const [showTitles, setShowTitles] = useState(false);
 
   return (
     <div className="grid gap-6">
